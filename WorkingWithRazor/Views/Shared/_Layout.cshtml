@@ -16,16 +16,19 @@
         This is part of the layout
     </div>
 
-    @RenderBody()
+    @RenderSection("Body")
 
     <div class="layout">
         This is part of the layout
     </div>
 
+@if (IsSectionDefined("Footer")) {
     @RenderSection("Footer")
+} else {
+    <h4>This is the default footer</h4>
+    }
+}
 
-    <div class="layout">
-        This is part of the layout
-    </div>
+@RenderSection("scripts", false)
 </body>
 </html>
